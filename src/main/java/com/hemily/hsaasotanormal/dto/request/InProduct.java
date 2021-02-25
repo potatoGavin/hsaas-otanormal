@@ -1,25 +1,26 @@
 package com.hemily.hsaasotanormal.dto.request;
 
-import org.springframework.web.bind.annotation.RequestBody;
-
 public class InProduct extends InBase {
 
     /**
      * 门票生效时间
+     * 格式：yyyyMMdd
      */
     public String startDate;
 
     /**
      * 门票生效时间
+     * 格式：yyyyMMdd
      */
     public String endDate;
 
     /**
      * 门票Id
+     * 如果查询所有产品，则不传或者传0
      */
     public String productId;
 
-    public InProduct(){
+    public InProduct() {
         super();
     }
 

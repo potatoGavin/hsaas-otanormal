@@ -3,6 +3,8 @@ package com.hemily.hsaasotanormal.dto.redis;
 
 /**
  * redis存储的商户信息
+ * 景区数据表key: merchantCode
+ * ota数据包key: otaAccount
  */
 public class MerchantRedis {
     /**

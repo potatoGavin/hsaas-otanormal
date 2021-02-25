@@ -20,13 +20,30 @@ public class ServiceResult {
     public String log;
 
     /**
+     * 响应数据
+     */
+    public Object data;
+
+    /**
      * 执行成功
      *
      * @param _log 操作日志
      * @return
      */
     public static ServiceResult success(String _log) {
-        return new ServiceResult(true, "业务逻辑执行成功", _log);
+        return new ServiceResult(true, "业务逻辑执行成功", _log, null);
+    }
+
+
+    /**
+     * 执行成功
+     *
+     * @param _log  操作日志
+     * @param _data 响应数据
+     * @return
+     */
+    public static ServiceResult success(String _log, Object _data) {
+        return new ServiceResult(true, "业务逻辑执行成功", _log, _data);
     }
 
     /**
@@ -37,13 +54,26 @@ public class ServiceResult {
      * @return
      */
     public static ServiceResult fail(String _msg, String _log) {
-        return new ServiceResult(false, _msg, _log);
+        return new ServiceResult(false, _msg, _log, null);
     }
 
-    public ServiceResult(boolean flag, String msg, String log) {
+    /**
+     * 执行失败
+     *
+     * @param _msg  失败原因
+     * @param _log  操作日志
+     * @param _data 响应数据
+     * @return
+     */
+    public static ServiceResult fail(String _msg, String _log, Object _data) {
+        return new ServiceResult(false, _msg, _log, _data);
+    }
+
+    public ServiceResult(boolean flag, String msg, String log, Object data) {
         this.flag = flag;
         this.msg = msg;
         this.log = log;
+        this.data = data;
     }
 
     public boolean isFlag() {
@@ -62,6 +92,21 @@ public class ServiceResult {
         this.msg = msg;
     }
 
+    public String getLog() {
+        return log;
+    }
+
+    public void setLog(String log) {
+        this.log = log;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 
     @Override
     public String toString() {
@@ -71,11 +116,4 @@ public class ServiceResult {
                 '}';
     }
 
-    public String getLog() {
-        return log;
-    }
-
-    public void setLog(String log) {
-        this.log = log;
-    }
 }

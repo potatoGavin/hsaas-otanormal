@@ -2,9 +2,13 @@ package com.hemily.hsaasotanormal.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.cert.TrustAnchor;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 /**
  * 字符串相关通用方法
@@ -14,6 +18,7 @@ public class StrUtil {
     /**
      * 验证字符串是否为空
      * null 或者 长度为0 或者 只是空格 都算是空
+     *
      * @param text 要验证的字符串
      * @return
      */
@@ -25,6 +30,22 @@ public class StrUtil {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 验证字符串是否是long类型
+     *
+     * @param text 要验证的字符串
+     * @return
+     */
+    public static boolean islong(String text) {
+        try {
+
+            Long.parseLong(text);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
     /**
@@ -62,6 +83,71 @@ public class StrUtil {
         Instant instant = Instant.ofEpochSecond(timestamp);
         //Instant instant = Instant.ofEpochMilli(timestamp);
         return LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+    }
+
+
+    /**
+     * 验证字符串是否是日期类型
+     *
+     * @param text    时间字符串
+     * @param partten 时间格式
+     * @return
+     */
+    public static boolean isDate(String text, String partten) {
+        try {
+            DateTimeFormatter ldt = DateTimeFormatter.ofPattern(partten);
+
+            boolean dateFlag = true;
+            try {
+                LocalDate.parse(text, ldt);
+            } catch (DateTimeParseException | NullPointerException e) {
+                dateFlag = false;
+            }
+
+            return dateFlag;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+    /**
+     * 验证字符串是否是日期时间类型
+     *
+     * @param text    时间字符串
+     * @param partten 时间格式
+     * @return
+     */
+    public static boolean isDateTime(String text, String partten) {
+        try {
+            DateTimeFormatter ldt = DateTimeFormatter.ofPattern(partten);
+
+            boolean dateFlag = true;
+            try {
+                LocalDateTime.parse(text, ldt);
+            } catch (DateTimeParseException | NullPointerException e) {
+                dateFlag = false;
+            }
+
+            return dateFlag;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+    /**
+     * 时间字符串转日期
+     *
+     * @param text    时间字符串
+     * @param partten 时间格式
+     * @return
+     */
+    public static LocalDateTime toDateTime(String text, String partten) {
+        try {
+            DateTimeFormatter ldt = DateTimeFormatter.ofPattern(partten);
+            return LocalDateTime.parse(text, ldt);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     /**

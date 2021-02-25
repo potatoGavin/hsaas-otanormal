@@ -4,6 +4,7 @@ package com.hemily.hsaasotanormal.handler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hemily.hsaasotanormal.dto.APIResult;
 import com.hemily.hsaasotanormal.dto.redis.MerchantRedis;
+import com.hemily.hsaasotanormal.dto.redis.ProtocolRedis;
 import com.hemily.hsaasotanormal.utils.JSON;
 import com.hemily.hsaasotanormal.utils.RedisUtil;
 import com.hemily.hsaasotanormal.utils.StrUtil;
@@ -38,11 +39,11 @@ public class AuthInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         APIResult result = helperCheckParam(request);
-//        if (result.code != 200) {
-//            //记录到日志
-//            helperRenderJson(response,objectMapper.writeValueAsString(result));
-//            return false;
-//        }
+        if (result.code != 200) {
+            //记录到日志
+            helperRenderJson(response, objectMapper.writeValueAsString(result));
+            return false;
+        }
 
         // 景区信息和ota信息加载到请求体
         helperUpdateBody(request);
@@ -126,7 +127,7 @@ public class AuthInterceptor implements HandlerInterceptor {
                 return APIResult.waringParamError("时间戳已过期");
             }
 
-            MerchantRedis ota = (MerchantRedis) redisUtil.hget("otainfo", account);
+            MerchantRedis ota = (MerchantRedis) redisUtil.hget("table_otainfo", account);
             if (ota == null) {
                 return APIResult.waringParamError("OTA账号错误");
             }
@@ -138,7 +139,13 @@ public class AuthInterceptor implements HandlerInterceptor {
             }
 
             //合作协议判断
-
+            ProtocolRedis protocol = (ProtocolRedis) redisUtil.hget("table_protocol", ota.merchantCode + "_" + parkCode);
+            if (protocol == null) {
+                return APIResult.waringProtocol();
+            }
+            if (LocalDateTime.now().isBefore(protocol.effectiveSt) || LocalDateTime.now().isAfter(protocol.effectiveEt)) {
+                return APIResult.waringProtocol("合作协议未生效或已过期");
+            }
 
             return APIResult.success(null);
         } catch (Exception ex) {
@@ -147,6 +154,11 @@ public class AuthInterceptor implements HandlerInterceptor {
 
     }
 
+    /**
+     * 重新加载请求body
+     *
+     * @param request 原始请求信息
+     */
     private void helperUpdateBody(HttpServletRequest request) {
         MultiReadHttpServletRequestWrapper requestWrapper = (MultiReadHttpServletRequestWrapper) request;
         String body = requestWrapper.getBody();
@@ -154,7 +166,7 @@ public class AuthInterceptor implements HandlerInterceptor {
         Map<String, Object> baseReq = new HashMap<>();
         baseReq = JSON.toObject(body, Map.class);
 
-        MerchantRedis park=(MerchantRedis) redisUtil.hget("table_parkinfo", request.getParameter("park"));
+        MerchantRedis park = (MerchantRedis) redisUtil.hget("table_parkinfo", request.getParameter("park"));
         MerchantRedis ota = (MerchantRedis) redisUtil.hget("table_otainfo", request.getParameter("account"));
 
         baseReq.put("parkId", park.merchantId);//景区商户ID

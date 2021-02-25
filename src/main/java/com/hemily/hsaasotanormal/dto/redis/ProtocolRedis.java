@@ -1,9 +1,10 @@
 package com.hemily.hsaasotanormal.dto.redis;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 合作协议表
+ * key-item:  merchantCode_otaAccount
  */
 public class ProtocolRedis {
 
@@ -45,12 +46,12 @@ public class ProtocolRedis {
     /**
      * 生效时间
      */
-    public Date effectiveSt;
+    public LocalDateTime effectiveSt;
 
     /**
      * 失效时间
      */
-    public Date effectiveEt;
+    public LocalDateTime effectiveEt;
 
     /**
      * 是否启用
@@ -113,19 +114,19 @@ public class ProtocolRedis {
         this.channelName = channelName;
     }
 
-    public Date getEffectiveSt() {
+    public LocalDateTime getEffectiveSt() {
         return effectiveSt;
     }
 
-    public void setEffectiveSt(Date effectiveSt) {
+    public void setEffectiveSt(LocalDateTime effectiveSt) {
         this.effectiveSt = effectiveSt;
     }
 
-    public Date getEffectiveEt() {
+    public LocalDateTime getEffectiveEt() {
         return effectiveEt;
     }
 
-    public void setEffectiveEt(Date effectiveEt) {
+    public void setEffectiveEt(LocalDateTime effectiveEt) {
         this.effectiveEt = effectiveEt;
     }
 

@@ -50,6 +50,16 @@ public class APIResult {
     }
 
     /**
+     * 接口响应失败
+     *
+     * @param _msg 错误信息
+     * @return
+     */
+    public static APIResult waring(String _msg) {
+        return new APIResult(2100, "接口执行失败" + _msg, null);
+    }
+
+    /**
      * 响应失败
      *
      * @param _code 响应码
@@ -89,6 +99,15 @@ public class APIResult {
      */
     public static APIResult waringProtocol() {
         return new APIResult(2210, "合作协议不存在(请联系景区进行签约)", null);
+    }
+
+    /**
+     * 合作协议不存在
+     *
+     * @return
+     */
+    public static APIResult waringProtocol(String _msg) {
+        return new APIResult(2210, _msg + "(请联系景区进行开通)", null);
     }
 
     /**
