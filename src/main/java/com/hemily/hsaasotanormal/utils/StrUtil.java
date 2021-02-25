@@ -13,18 +13,18 @@ public class StrUtil {
 
     /**
      * 验证字符串是否为空
-     *
+     * null 或者 长度为0 或者 只是空格 都算是空
      * @param text 要验证的字符串
      * @return
      */
     public static boolean isNullOrEmpty(String text) {
         if (text == null || text.isEmpty()) {
-            return false;
+            return true;
         }
         if (text.trim().isEmpty()) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**

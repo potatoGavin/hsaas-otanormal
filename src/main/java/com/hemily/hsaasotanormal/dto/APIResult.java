@@ -1,13 +1,24 @@
-package com.hemily.hsaasotanormal.base;
+package com.hemily.hsaasotanormal.dto;
 
 /**
  * 服务统一响应规则
  */
 public class APIResult {
+
+    /**
+     * 响应码
+     * 200-成功，其他都是失败
+     */
     public int code;
 
+    /**
+     * 响应描述
+     */
     public String msg;
 
+    /**
+     * 响应数据
+     */
     public Object data;
 
     public APIResult() {
