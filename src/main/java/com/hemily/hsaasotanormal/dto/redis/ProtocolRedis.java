@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 /**
  * 合作协议表
+ * hash-table
  * key-item:  merchantCode_otaAccount
  */
 public class ProtocolRedis {

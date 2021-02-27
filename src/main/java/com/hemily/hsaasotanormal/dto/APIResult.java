@@ -56,7 +56,7 @@ public class APIResult {
      * @return
      */
     public static APIResult waring(String _msg) {
-        return new APIResult(2100, "接口执行失败" + _msg, null);
+        return new APIResult(2100, "接口执行失败："+_msg, null);
     }
 
     /**
