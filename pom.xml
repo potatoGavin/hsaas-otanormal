@@ -28,12 +28,18 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--数据库ORM-->
+		<!-- lombok -->
 		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>3.5.5</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
+
+		<!-- mybatis_plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.0</version>
+        </dependency>
 
 		<!--数据库驱动-->
 		<dependency>

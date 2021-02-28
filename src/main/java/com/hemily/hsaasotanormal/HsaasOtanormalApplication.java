@@ -1,6 +1,7 @@
 package com.hemily.hsaasotanormal;
 
 import com.hemily.hsaasotanormal.dto.APIResult;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import java.util.Map;
  */
 @SpringBootApplication
 @RestController
+@MapperScan("com.hemily.hsaasotanormal.dao")
 public class HsaasOtanormalApplication {
 
 	public static void main(String[] args) {
