@@ -2,7 +2,7 @@
 -- 系统商户相关表
 
 drop table if exists ops_merchant;
-create table ops_ops_merchant (
+create table ops_mer_merchant (
  nl_merchant_id bigint unsigned not null comment '商户Id',
  nl_company_id bigint unsigned not null comment '所属公司Id',
  si_merchant_code varchar(30) not null comment '商户编码',
@@ -16,7 +16,7 @@ create table ops_ops_merchant (
  si_create_user varchar(20) not null comment '创建人',
  ts_create_time datetime not null comment '创建时间',
  si_update_user varchar(20) not null comment '更新人',
- ts_update_time datetime not null comment '更新时间',
+ si_update_time datetime not null comment '更新时间',
 primary key (nl_merchant_id),
 unique key(si_merchant_code),
 key idx_query(nl_company_id,si_merchant_code,si_contact_name)
