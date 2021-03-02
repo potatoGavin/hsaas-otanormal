@@ -9,20 +9,59 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+ /**
+ 核销记录表(order_recode_check)Entity
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @TableName(value="order_recode_check")
 public class OrderRecodeCheckEntity {
+	 /** 
+	  * 记录Id
+	  */
 	 @TableId(value="nl_check_id",type= IdType.AUTO)
 	 private Long nlCheckId;
- 	 private Long nlMerchantId;
- 	 private String siOrderno;
- 	 private String siEcode;
- 	 private Integer niQtyCheck;
- 	 private Date tsCheckTime;
- 	 private Integer niCheckTerminal;
- 	 private Integer niCheckType;
- 	 private Integer niRemark;
+
+ 	 /** 
+	  * 商户Id
+	  */
+	 private Long nlMerchantId;
+
+ 	 /** 
+	  * 订单号
+	  */
+	 private String siOrderno;
+
+ 	 /** 
+	  * 凭证码
+	  */
+	 private String siEcode;
+
+ 	 /** 
+	  * 核销数量
+	  */
+	 private Integer niQtyCheck;
+
+ 	 /** 
+	  * 核销时间
+	  */
+	 private Date tsCheckTime;
+
+ 	 /** 
+	  * 核销终端
+	  */
+	 private Integer niCheckTerminal;
+
+ 	 /** 
+	  * 核销类型：1-取票核销,2-闸机核销
+	  */
+	 private Integer niCheckType;
+
+ 	 /** 
+	  * 操作备注
+	  */
+	 private Integer niRemark;
+
  }

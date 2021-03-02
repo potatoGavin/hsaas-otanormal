@@ -9,14 +9,29 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+ /**
+ 商户OTA表(ops_merchant_ota)Entity
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @TableName(value="ops_merchant_ota")
 public class OpsMerchantOtaEntity {
+	 /** 
+	  * 商户Id
+	  */
 	 @TableId(value="nl_merchant_id",type= IdType.AUTO)
 	 private Long nlMerchantId;
- 	 private String siOtaAccount;
- 	 private String siOtaUrl;
+
+ 	 /** 
+	  * ota账号
+	  */
+	 private String siOtaAccount;
+
+ 	 /** 
+	  * ota回调地址
+	  */
+	 private String siOtaUrl;
+
  }

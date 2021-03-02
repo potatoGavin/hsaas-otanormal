@@ -9,16 +9,39 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+ /**
+ 商户非标OTA,美团(ops_merchant_ota_meituan)Entity
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @TableName(value="ops_merchant_ota_meituan")
 public class OpsMerchantOtaMeituanEntity {
+	 /** 
+	  * 景区Id
+	  */
 	 @TableId(value="nl_merchant_id",type= IdType.AUTO)
 	 private Long nlMerchantId;
- 	 private Long nlOtaId;
- 	 private Long nlMeituanId;
- 	 private String siMeituanAccount;
- 	 private String siMeituanKey;
+
+ 	 /** 
+	  * otaId
+	  */
+	 private Long nlOtaId;
+
+ 	 /** 
+	  * 美团Id
+	  */
+	 private Long nlMeituanId;
+
+ 	 /** 
+	  * 美团账号
+	  */
+	 private String siMeituanAccount;
+
+ 	 /** 
+	  * 美团秘钥
+	  */
+	 private String siMeituanKey;
+
  }

@@ -9,19 +9,54 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+ /**
+ 订单记录表(order_recode_master)Entity
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @TableName(value="order_recode_master")
 public class OrderRecodeMasterEntity {
+	 /** 
+	  * 记录Id
+	  */
 	 @TableId(value="nl_recode_id",type= IdType.AUTO)
 	 private Long nlRecodeId;
- 	 private String siOrderno;
- 	 private Long nlMerchantId;
- 	 private Long nlChannelId;
- 	 private Integer niRecodeType;
- 	 private Date tsCreateTime;
- 	 private Integer niCreateUser;
- 	 private Integer niRemark;
+
+ 	 /** 
+	  * 订单号
+	  */
+	 private String siOrderno;
+
+ 	 /** 
+	  * 商户Id
+	  */
+	 private Long nlMerchantId;
+
+ 	 /** 
+	  * 渠道Id
+	  */
+	 private Long nlChannelId;
+
+ 	 /** 
+	  * 操作类型：1-创建,20-支付,30-反审,40-修改,60-核销,70-退票
+	  */
+	 private Integer niRecodeType;
+
+ 	 /** 
+	  * 创建时间
+	  */
+	 private Date tsCreateTime;
+
+ 	 /** 
+	  * 操作人
+	  */
+	 private Integer niCreateUser;
+
+ 	 /** 
+	  * 操作备注
+	  */
+	 private Integer niRemark;
+
  }

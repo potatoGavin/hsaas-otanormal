@@ -9,18 +9,49 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+ /**
+ 价格日历表(ops_product_price_ota)Entity
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @TableName(value="ops_product_price_ota")
 public class OpsProductPriceOtaEntity {
+	 /** 
+	  * 价格Id
+	  */
 	 @TableId(value="nl_price_id",type= IdType.AUTO)
 	 private Long nlPriceId;
- 	 private Long nlMerchantId;
- 	 private Long nlChannelId;
- 	 private Long nlProductId;
- 	 private Integer niPriceSell;
- 	 private Integer niPriceSettle;
- 	 private Date tsDate;
+
+ 	 /** 
+	  * 所属景区Id
+	  */
+	 private Long nlMerchantId;
+
+ 	 /** 
+	  * 所属渠道Id
+	  */
+	 private Long nlChannelId;
+
+ 	 /** 
+	  * 产品Id
+	  */
+	 private Long nlProductId;
+
+ 	 /** 
+	  * 售卖价
+	  */
+	 private Integer niPriceSell;
+
+ 	 /** 
+	  * 结算价
+	  */
+	 private Integer niPriceSettle;
+
+ 	 /** 
+	  * 有效日期
+	  */
+	 private Date tsDate;
+
  }

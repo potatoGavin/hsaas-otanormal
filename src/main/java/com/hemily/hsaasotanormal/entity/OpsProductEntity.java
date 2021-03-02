@@ -9,24 +9,79 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+ /**
+ 基础产品库(ops_product)Entity
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @TableName(value="ops_product")
 public class OpsProductEntity {
+	 /** 
+	  * 产品Id
+	  */
 	 @TableId(value="nl_product_id",type= IdType.AUTO)
 	 private Long nlProductId;
- 	 private Integer niProductCode;
- 	 private Long nlMerchantId;
- 	 private String siProductName;
- 	 private String siOfflineCode;
- 	 private Integer niPriceTicket;
- 	 private Boolean isEnabled;
- 	 private Boolean isDeleted;
- 	 private String siRemark;
- 	 private String siCreateUser;
- 	 private Date tsCreateTime;
- 	 private String siUpdateUser;
- 	 private String siUpdateTime;
+
+ 	 /** 
+	  * 产品编码
+	  */
+	 private Integer niProductCode;
+
+ 	 /** 
+	  * 所属商户Id
+	  */
+	 private Long nlMerchantId;
+
+ 	 /** 
+	  * 产品名称
+	  */
+	 private String siProductName;
+
+ 	 /** 
+	  * 线下编码
+	  */
+	 private String siOfflineCode;
+
+ 	 /** 
+	  * 票面价
+	  */
+	 private Integer niPriceTicket;
+
+ 	 /** 
+	  * 是否启用
+	  */
+	 private Boolean isEnabled;
+
+ 	 /** 
+	  * 是否删除
+	  */
+	 private Boolean isDeleted;
+
+ 	 /** 
+	  * 备注
+	  */
+	 private String siRemark;
+
+ 	 /** 
+	  * 创建人
+	  */
+	 private String siCreateUser;
+
+ 	 /** 
+	  * 创建时间
+	  */
+	 private Date tsCreateTime;
+
+ 	 /** 
+	  * 更新人
+	  */
+	 private String siUpdateUser;
+
+ 	 /** 
+	  * 更新时间
+	  */
+	 private String siUpdateTime;
+
  }

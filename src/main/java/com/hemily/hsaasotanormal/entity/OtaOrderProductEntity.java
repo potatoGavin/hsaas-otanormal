@@ -9,18 +9,49 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+ /**
+ ota产品清单(ota_order_product)Entity
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @TableName(value="ota_order_product")
 public class OtaOrderProductEntity {
+	 /** 
+	  * 清单Id
+	  */
 	 @TableId(value="nl_detail_id",type= IdType.AUTO)
 	 private Long nlDetailId;
- 	 private String siOrderno;
- 	 private Long nlProductId;
- 	 private Integer niProductCount;
- 	 private Integer niPriceSettle;
- 	 private Integer niPriceSell;
- 	 private Date tsCreateTime;
+
+ 	 /** 
+	  * 订单号
+	  */
+	 private String siOrderno;
+
+ 	 /** 
+	  * 产品Id
+	  */
+	 private Long nlProductId;
+
+ 	 /** 
+	  * 购买数量
+	  */
+	 private Integer niProductCount;
+
+ 	 /** 
+	  * 单价(结算价)
+	  */
+	 private Integer niPriceSettle;
+
+ 	 /** 
+	  * 单价((结算价)
+	  */
+	 private Integer niPriceSell;
+
+ 	 /** 
+	  * 创建时间
+	  */
+	 private Date tsCreateTime;
+
  }
