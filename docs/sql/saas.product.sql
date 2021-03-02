@@ -18,12 +18,12 @@ create table ops_product (
  si_update_time datetime not null comment '更新时间',
 primary key (nl_product_id),
 index idx_connect(si_offline_code,si_product_name),
-unique key udk_code(nl_merchant_id,ni_product_code)
+unique key unk_code(nl_merchant_id,ni_product_code)
 )Engine=INNODB charset=utf8 comment '基础产品库';
 
 drop table if exists ops_product_sell;
 create table ops_product_sell (
- nl_product_id int unsigned not null comment '产品Id',
+ nl_product_id bigint unsigned not null comment '产品Id',
  ni_product_code int unsigned not null comment '产品编码',
  nl_merchant_id bigint unsigned not null comment '所属商户Id',
  si_product_name varchar(50) not null comment '产品名称',
@@ -39,12 +39,14 @@ create table ops_product_sell (
  si_update_user varchar(20) not null comment '更新人',
  si_update_time datetime not null comment '更新时间',
 primary key (nl_product_id),
-index idx_connect(nl_merchant_id,si_product_name)
+unique key unk_code(nl_merchant_id,ni_product_code),
+index idx_connect(si_product_name,si_update_time)
 )Engine=INNODB charset=utf8 comment '产品上架表';
 
 drop table if exists ops_product_sell_ota;
 create table ops_product_sell_ota (
- nl_product_id int unsigned not null comment '产品Id',
+ nl_product_id bigint unsigned not null comment '产品Id',
+ ni_product_code int unsigned not null comment '产品编码',
  nl_merchant_id bigint unsigned not null comment '所属商户Id',
  si_product_display varchar(50) not null comment '显示名称',
  nl_product_type bigint unsigned not null comment '产品类型', 
@@ -75,13 +77,15 @@ create table ops_product_sell_ota (
  si_update_user varchar(20) not null comment '更新人',
  si_update_time datetime not null comment '更新时间',
 primary key (nl_product_id),
-index idx_connect(nl_merchant_id)
+unique key unk_code(nl_merchant_id,ni_product_code),
+index idx_connect(si_product_display,si_update_time)
 )Engine=INNODB charset=utf8 comment 'ota产品上架表';
 
 drop table if exists ops_product_release_ota;
 create table ops_product_release_ota (
  nl_release_id bigint unsigned not null comment '发布Id',
  nl_product_id int unsigned not null comment '产品Id',
+ ni_product_code int unsigned not null comment '产品编码',
  nl_merchant_id bigint unsigned not null comment '所属商户Id',
  nl_channel_id bigint  unsigned not null comment '所属渠道Id',
  si_product_display varchar(50) not null comment '显示名称',

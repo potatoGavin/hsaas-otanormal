@@ -13,18 +13,20 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
- 	 private Integer niProductCode;
- 	 private Long nlMerchantId;
- 	 private String siProductName;
- 	 private String siOfflineCode;
- 	 private Integer niPriceTicket;
- 	 private Boolean isEnabled;
+@TableName(value="bs_sys_dict")
+public class BsSysDictEntity {
+	 @TableId(value="nl_dict_key",type= IdType.AUTO)
+	 private Long nlDictKey;
+ 	 private Long nlDictType;
+ 	 private String siDictCode;
+ 	 private String siDictValue;
+ 	 private Long nlParentKey;
+ 	 private Long nlParentCode;
+ 	 private String siDictIcon;
+ 	 private Integer niLimitSys;
+ 	 private Integer niDictSort;
+ 	 private String slRemark;
  	 private Boolean isDeleted;
- 	 private String siRemark;
  	 private String siCreateUser;
  	 private Date tsCreateTime;
  	 private String siUpdateUser;

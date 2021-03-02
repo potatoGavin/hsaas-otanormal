@@ -29,8 +29,10 @@ create table bs_sys_button (
 drop table if exists bs_sys_dicttype;
 create table bs_sys_dicttype(
  nl_dict_type bigint unsigned not null comment '类型Id',
- nl_dict_name varchar(20) not null comment '类型名称',
- primary key (nl_dict_type)
+ si_type_name varchar(50) not null comment '类型名称',
+ si_type_remark varchar(50) not null comment '备注',
+ primary key (nl_dict_type),
+ unique key unk(si_type_name)
 )Engine=INNODB charset=utf8 comment='数据字典类型';
 
 drop table if exists bs_sys_dict;
@@ -38,7 +40,7 @@ create table bs_sys_dict(
  nl_dict_key bigint unsigned not null comment '字典Key',
  nl_dict_type bigint unsigned not null comment '类型Id',
  si_dict_code varchar(20) default null comment '字典编码',
- si_dict_value varchar(30) default null comment '字典值',
+ si_dict_value varchar(30) not null comment '字典值',
  nl_parent_key bigint unsigned default '0' comment '上级字典Key',
  nl_parent_code bigint unsigned default '0' comment '上级字典编码',
  si_dict_icon varchar(50) default null comment '字典图标',
@@ -49,7 +51,7 @@ create table bs_sys_dict(
  si_create_user varchar(20) not null comment '创建人',
  ts_create_time datetime not null comment '创建时间',
  si_update_user varchar(20) not null comment '更新人',
- si_update_time datetime not null comment '更新时间', 
+ si_update_time datetime not null comment '更新时间',
 primary key (nl_dict_key),
-key idx_key(nl_dict_type,nl_parent_key)
+key idx_key(nl_dict_type,nl_parent_key,ni_dict_sort,si_dict_value)
 )Engine=INNODB charset=utf8 comment '数据字典';

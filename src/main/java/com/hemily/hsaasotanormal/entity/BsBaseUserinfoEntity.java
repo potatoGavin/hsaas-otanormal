@@ -13,20 +13,20 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
- 	 private Integer niProductCode;
- 	 private Long nlMerchantId;
- 	 private String siProductName;
- 	 private String siOfflineCode;
- 	 private Integer niPriceTicket;
- 	 private Boolean isEnabled;
- 	 private Boolean isDeleted;
- 	 private String siRemark;
+@TableName(value="bs_base_userinfo")
+public class BsBaseUserinfoEntity {
+	 @TableId(value="nl_user_id",type= IdType.AUTO)
+	 private Long nlUserId;
+ 	 private Long nlCompanyId;
+ 	 private String siUserAccount;
+ 	 private String siUserPassword;
+ 	 private String siUserName;
+ 	 private String siUserMobile;
+ 	 private Long nlRoleId;
  	 private String siCreateUser;
  	 private Date tsCreateTime;
  	 private String siUpdateUser;
- 	 private String siUpdateTime;
+ 	 private Date tsUpdateTime;
+ 	 private Boolean isEnabled;
+ 	 private Boolean isDeleted;
  }

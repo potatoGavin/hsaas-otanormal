@@ -13,8 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="ops_product_sell")
+public class OpsProductSellEntity {
 	 @TableId(value="nl_product_id",type= IdType.AUTO)
 	 private Long nlProductId;
  	 private Integer niProductCode;
@@ -22,7 +22,9 @@ public class OpsProductEntity {
  	 private String siProductName;
  	 private String siOfflineCode;
  	 private Integer niPriceTicket;
- 	 private Boolean isEnabled;
+ 	 private Integer niPriceSell;
+ 	 private Date tsEffectiveSt;
+ 	 private Date tsEffectiveEt;
  	 private Boolean isDeleted;
  	 private String siRemark;
  	 private String siCreateUser;

@@ -13,15 +13,16 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
- 	 private Integer niProductCode;
+@TableName(value="ops_channel_finance")
+public class OpsChannelFinanceEntity {
+	 @TableId(value="nl_protocol_id",type= IdType.AUTO)
+	 private Long nlProtocolId;
  	 private Long nlMerchantId;
- 	 private String siProductName;
- 	 private String siOfflineCode;
- 	 private Integer niPriceTicket;
+ 	 private Long nlChannelId;
+ 	 private Integer niAmountBalance;
+ 	 private Integer niAmountCreditline;
+ 	 private Integer niAmountOccupation;
+ 	 private Integer niStatus;
  	 private Boolean isEnabled;
  	 private Boolean isDeleted;
  	 private String siRemark;
