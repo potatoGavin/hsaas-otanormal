@@ -2,7 +2,7 @@
 -- 系统商户相关表
 
 drop table if exists ops_merchant;
-create table ops_mer_merchant (
+create table ops_merchant (
  nl_merchant_id bigint unsigned not null comment '商户Id',
  nl_company_id bigint unsigned not null comment '所属公司Id',
  si_merchant_code varchar(30) not null comment '商户编码',
