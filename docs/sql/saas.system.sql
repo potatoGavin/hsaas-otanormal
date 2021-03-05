@@ -46,7 +46,7 @@ create table bs_sys_dict(
  si_dict_icon varchar(50) default null comment '字典图标',
  ni_limit_sys tinyint default '0' comment '系统限定',
  ni_dict_sort int unsigned not null comment '排序号',
- sl_remark varchar(100) not null comment '备注',
+ sl_remark varchar(100) default null comment '备注',
  is_deleted tinyint unsigned default '0' comment '是否删除',
  si_create_user varchar(20) not null comment '创建人',
  ts_create_time datetime not null comment '创建时间',

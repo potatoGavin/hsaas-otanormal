@@ -84,7 +84,7 @@ index idx_connect(si_product_display,si_update_time)
 drop table if exists ops_product_release_ota;
 create table ops_product_release_ota (
  nl_release_id bigint unsigned not null comment '发布Id',
- nl_product_id int unsigned not null comment '产品Id',
+ nl_product_id bigint unsigned not null comment '产品Id',
  ni_product_code int unsigned not null comment '产品编码',
  nl_merchant_id bigint unsigned not null comment '所属商户Id',
  nl_channel_id bigint  unsigned not null comment '所属渠道Id',

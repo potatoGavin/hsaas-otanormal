@@ -55,7 +55,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- redis-->
+		<!-- redis 做为缓存使用-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
