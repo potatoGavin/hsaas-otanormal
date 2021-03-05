@@ -92,6 +92,6 @@ public class BsSysDictEntity {
  	 /** 
 	  * 更新时间
 	  */
-	 private String siUpdateTime;
+	 private Date tsUpdateTime;
 
  }

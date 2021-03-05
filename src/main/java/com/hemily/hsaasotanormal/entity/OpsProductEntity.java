@@ -47,7 +47,7 @@ public class OpsProductEntity {
  	 /** 
 	  * 票面价
 	  */
-	 private Integer niPriceTicket;
+	 private Double niPriceTicket;
 
  	 /** 
 	  * 是否启用
@@ -82,6 +82,6 @@ public class OpsProductEntity {
  	 /** 
 	  * 更新时间
 	  */
-	 private String siUpdateTime;
+	 private Date tsUpdateTime;
 
  }

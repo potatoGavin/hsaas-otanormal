@@ -57,7 +57,7 @@ public class OpsChannelFinanceDetailEntity {
  	 /** 
 	  * 产品单价
 	  */
-	 private Integer niPrice;
+	 private Double niPrice;
 
  	 /** 
 	  * 产品数量

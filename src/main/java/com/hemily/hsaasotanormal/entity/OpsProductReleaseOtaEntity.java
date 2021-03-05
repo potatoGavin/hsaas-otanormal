@@ -62,17 +62,17 @@ public class OpsProductReleaseOtaEntity {
  	 /** 
 	  * 票面价
 	  */
-	 private Integer niPriceTicket;
+	 private Double niPriceTicket;
 
  	 /** 
 	  * 售卖价
 	  */
-	 private Integer niPriceSell;
+	 private Double niPriceSell;
 
  	 /** 
 	  * 结算价
 	  */
-	 private Integer niPriceSettle;
+	 private Double niPriceSettle;
 
  	 /** 
 	  * 生效时间
@@ -162,7 +162,7 @@ public class OpsProductReleaseOtaEntity {
  	 /** 
 	  * 周期价：1-开启
 	  */
-	 private Integer niCkPriceType;
+	 private Double niCkPriceType;
 
  	 /** 
 	  * 期票：1-固定天数,2-指定日期
@@ -207,6 +207,6 @@ public class OpsProductReleaseOtaEntity {
  	 /** 
 	  * 更新时间
 	  */
-	 private String siUpdateTime;
+	 private Date tsUpdateTime;
 
  }

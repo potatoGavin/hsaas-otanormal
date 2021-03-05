@@ -47,12 +47,12 @@ public class OpsProductSellEntity {
  	 /** 
 	  * 票面价
 	  */
-	 private Integer niPriceTicket;
+	 private Double niPriceTicket;
 
  	 /** 
 	  * 售卖价
 	  */
-	 private Integer niPriceSell;
+	 private Double niPriceSell;
 
  	 /** 
 	  * 生效时间
@@ -92,6 +92,6 @@ public class OpsProductSellEntity {
  	 /** 
 	  * 更新时间
 	  */
-	 private String siUpdateTime;
+	 private Date tsUpdateTime;
 
  }

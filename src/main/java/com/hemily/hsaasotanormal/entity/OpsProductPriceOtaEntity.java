@@ -42,12 +42,12 @@ public class OpsProductPriceOtaEntity {
  	 /** 
 	  * 售卖价
 	  */
-	 private Integer niPriceSell;
+	 private Double niPriceSell;
 
  	 /** 
 	  * 结算价
 	  */
-	 private Integer niPriceSettle;
+	 private Double niPriceSettle;
 
  	 /** 
 	  * 有效日期

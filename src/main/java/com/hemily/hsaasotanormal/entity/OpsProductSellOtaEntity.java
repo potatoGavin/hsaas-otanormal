@@ -47,7 +47,7 @@ public class OpsProductSellOtaEntity {
  	 /** 
 	  * 结算价
 	  */
-	 private Integer niPriceSettle;
+	 private Double niPriceSettle;
 
  	 /** 
 	  * 是否开启预售
@@ -127,7 +127,7 @@ public class OpsProductSellOtaEntity {
  	 /** 
 	  * 周期价：1-开启
 	  */
-	 private Integer niCkPriceType;
+	 private Double niCkPriceType;
 
  	 /** 
 	  * 期票：1-固定天数,2-指定日期
@@ -172,6 +172,6 @@ public class OpsProductSellOtaEntity {
  	 /** 
 	  * 更新时间
 	  */
-	 private String siUpdateTime;
+	 private Date tsUpdateTime;
 
  }

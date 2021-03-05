@@ -10,49 +10,54 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 渠道财务协议表(ops_channel_finance)Entity
+ 商户主表(ops_merchant)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_channel_finance")
-public class OpsChannelFinanceEntity {
+@TableName(value="ops_merchant")
+public class OpsMerchantEntity {
 	 /** 
-	  * 协议Id
-	  */
-	 @TableId(value="nl_protocol_id",type= IdType.AUTO)
-	 private Long nlProtocolId;
-
- 	 /** 
 	  * 商户Id
 	  */
+	 @TableId(value="nl_merchant_id",type= IdType.AUTO)
 	 private Long nlMerchantId;
 
  	 /** 
-	  * 渠道Id
+	  * 所属公司Id
 	  */
-	 private Long nlChannelId;
+	 private Long nlCompanyId;
 
  	 /** 
-	  * 账户余额
+	  * 商户名称
 	  */
-	 private Integer niAmountBalance;
+	 private String siMerchantName;
 
  	 /** 
-	  * 信用额度
+	  * 商户编码
 	  */
-	 private Integer niAmountCreditline;
+	 private String siMerchantCode;
 
  	 /** 
-	  * 占用金额
+	  * 商户类型：10-景区，21-ota，22-旅行社
 	  */
-	 private Integer niAmountOccupation;
+	 private Integer niMerchantType;
 
  	 /** 
-	  * 账户状态：0-禁用，1-正常
+	  * 联系人
 	  */
-	 private Integer niStatus;
+	 private String siContactName;
+
+ 	 /** 
+	  * 联系电话
+	  */
+	 private String siContactPhone;
+
+ 	 /** 
+	  * 秘钥
+	  */
+	 private String siMerchantKey;
 
  	 /** 
 	  * 是否启用

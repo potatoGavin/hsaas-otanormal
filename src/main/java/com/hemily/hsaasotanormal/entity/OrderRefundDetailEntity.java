@@ -47,7 +47,7 @@ public class OrderRefundDetailEntity {
  	 /** 
 	  * 退款单价
 	  */
-	 private Integer niProductPrice;
+	 private Double niProductPrice;
 
  	 /** 
 	  * 退款数量

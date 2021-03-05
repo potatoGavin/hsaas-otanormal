@@ -42,12 +42,12 @@ public class OtaOrderProductEntity {
  	 /** 
 	  * 单价(结算价)
 	  */
-	 private Integer niPriceSettle;
+	 private Double niPriceSettle;
 
  	 /** 
 	  * 单价((结算价)
 	  */
-	 private Integer niPriceSell;
+	 private Double niPriceSell;
 
  	 /** 
 	  * 创建时间
