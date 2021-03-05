@@ -10,44 +10,54 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 商户主表(ops_merchant)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="ops_merchant")
+public class OpsMerchantEntity {
 	 /** 
-	  * 产品Id
+	  * 商户Id
 	  */
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
-
- 	 /** 
-	  * 产品编码
-	  */
-	 private Integer niProductCode;
-
- 	 /** 
-	  * 所属商户Id
-	  */
+	 @TableId(value="nl_merchant_id",type= IdType.AUTO)
 	 private Long nlMerchantId;
 
  	 /** 
-	  * 产品名称
+	  * 所属公司Id
 	  */
-	 private String siProductName;
+	 private Long nlCompanyId;
 
  	 /** 
-	  * 线下编码
+	  * 商户名称
 	  */
-	 private String siOfflineCode;
+	 private String siMerchantName;
 
  	 /** 
-	  * 票面价
+	  * 商户编码
 	  */
-	 private Double niPriceTicket;
+	 private String siMerchantCode;
+
+ 	 /** 
+	  * 商户类型：10-景区，21-ota，22-旅行社
+	  */
+	 private Integer niMerchantType;
+
+ 	 /** 
+	  * 联系人
+	  */
+	 private String siContactName;
+
+ 	 /** 
+	  * 联系电话
+	  */
+	 private String siContactPhone;
+
+ 	 /** 
+	  * 秘钥
+	  */
+	 private String siMerchantKey;
 
  	 /** 
 	  * 是否启用

@@ -1,5 +1,4 @@
 package com.hemily.hsaasotanormal.entity;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -11,23 +10,18 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- ota产品发布表(ops_product_release_ota)Entity
+ ota产品上架表(ops_product_sell_ota)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product_release_ota")
-public class OpsProductReleaseOtaEntity {
+@TableName(value="ops_product_sell_ota")
+public class OpsProductSellOtaEntity {
 	 /** 
-	  * 发布Id
-	  */
-	 @TableId(value="nl_release_id",type= IdType.AUTO)
-	 private Long nlReleaseId;
-
- 	 /** 
 	  * 产品Id
 	  */
+	 @TableId(value="nl_product_id",type= IdType.AUTO)
 	 private Long nlProductId;
 
  	 /** 
@@ -41,11 +35,6 @@ public class OpsProductReleaseOtaEntity {
 	 private Long nlMerchantId;
 
  	 /** 
-	  * 所属渠道Id
-	  */
-	 private Long nlChannelId;
-
- 	 /** 
 	  * 显示名称
 	  */
 	 private String siProductDisplay;
@@ -56,34 +45,9 @@ public class OpsProductReleaseOtaEntity {
 	 private Long nlProductType;
 
  	 /** 
-	  * 线下编码
-	  */
-	 private String siOfflineCode;
-
- 	 /** 
-	  * 票面价
-	  */
-	 private Double niPriceTicket;
-
- 	 /** 
-	  * 售卖价
-	  */
-	 private Double niPriceSell;
-
- 	 /** 
 	  * 结算价
 	  */
 	 private Double niPriceSettle;
-
- 	 /** 
-	  * 生效时间
-	  */
-	 private Date tsEffectiveSt;
-
- 	 /** 
-	  * 失效时间
-	  */
-	 private Date tsEffectiveEt;
 
  	 /** 
 	  * 是否开启预售

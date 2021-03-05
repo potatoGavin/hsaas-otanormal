@@ -1,5 +1,4 @@
 package com.hemily.hsaasotanormal.entity;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -11,48 +10,53 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 价格日历表(ops_product_price_ota)Entity
+ 订单记录表(order_recode_master)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product_price_ota")
-public class OpsProductPriceOtaEntity {
+@TableName(value="order_recode_master")
+public class OrderRecodeMasterEntity {
 	 /** 
-	  * 价格Id
+	  * 记录Id
 	  */
-	 @TableId(value="nl_price_id",type= IdType.AUTO)
-	 private Long nlPriceId;
+	 @TableId(value="nl_recode_id",type= IdType.AUTO)
+	 private Long nlRecodeId;
 
  	 /** 
-	  * 所属景区Id
+	  * 订单号
+	  */
+	 private String siOrderno;
+
+ 	 /** 
+	  * 商户Id
 	  */
 	 private Long nlMerchantId;
 
  	 /** 
-	  * 所属渠道Id
+	  * 渠道Id
 	  */
 	 private Long nlChannelId;
 
  	 /** 
-	  * 产品Id
+	  * 操作类型：1-创建,20-支付,30-反审,40-修改,60-核销,70-退票
 	  */
-	 private Long nlProductId;
+	 private Integer niRecodeType;
 
  	 /** 
-	  * 售卖价
+	  * 创建时间
 	  */
-	 private Double niPriceSell;
+	 private Date tsCreateTime;
 
  	 /** 
-	  * 结算价
+	  * 操作人
 	  */
-	 private Double niPriceSettle;
+	 private Integer niCreateUser;
 
  	 /** 
-	  * 有效日期
+	  * 操作备注
 	  */
-	 private Date tsDate;
+	 private Integer niRemark;
 
  }

@@ -1,5 +1,4 @@
 package com.hemily.hsaasotanormal.entity;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -11,29 +10,24 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 价格日历表(ops_product_price_ota)Entity
+ ota产品清单(ota_order_product)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product_price_ota")
-public class OpsProductPriceOtaEntity {
+@TableName(value="ota_order_product")
+public class OtaOrderProductEntity {
 	 /** 
-	  * 价格Id
+	  * 清单Id
 	  */
-	 @TableId(value="nl_price_id",type= IdType.AUTO)
-	 private Long nlPriceId;
+	 @TableId(value="nl_detail_id",type= IdType.AUTO)
+	 private Long nlDetailId;
 
  	 /** 
-	  * 所属景区Id
+	  * 订单号
 	  */
-	 private Long nlMerchantId;
-
- 	 /** 
-	  * 所属渠道Id
-	  */
-	 private Long nlChannelId;
+	 private String siOrderno;
 
  	 /** 
 	  * 产品Id
@@ -41,18 +35,23 @@ public class OpsProductPriceOtaEntity {
 	 private Long nlProductId;
 
  	 /** 
-	  * 售卖价
+	  * 购买数量
 	  */
-	 private Double niPriceSell;
+	 private Integer niProductCount;
 
  	 /** 
-	  * 结算价
+	  * 单价(结算价)
 	  */
 	 private Double niPriceSettle;
 
  	 /** 
-	  * 有效日期
+	  * 单价((结算价)
 	  */
-	 private Date tsDate;
+	 private Double niPriceSell;
+
+ 	 /** 
+	  * 创建时间
+	  */
+	 private Date tsCreateTime;
 
  }

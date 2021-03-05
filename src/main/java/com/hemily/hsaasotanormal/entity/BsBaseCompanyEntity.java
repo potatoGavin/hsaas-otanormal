@@ -10,54 +10,34 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 公司管理(bs_base_company)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="bs_base_company")
+public class BsBaseCompanyEntity {
 	 /** 
-	  * 产品Id
+	  * 公司Id
 	  */
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
+	 @TableId(value="nl_company_id",type= IdType.AUTO)
+	 private Long nlCompanyId;
 
  	 /** 
-	  * 产品编码
+	  * 公司名称
 	  */
-	 private Integer niProductCode;
+	 private String siCompanyName;
 
  	 /** 
-	  * 所属商户Id
+	  * 联系人
 	  */
-	 private Long nlMerchantId;
+	 private String siContactsName;
 
  	 /** 
-	  * 产品名称
+	  * 联系电话
 	  */
-	 private String siProductName;
-
- 	 /** 
-	  * 线下编码
-	  */
-	 private String siOfflineCode;
-
- 	 /** 
-	  * 票面价
-	  */
-	 private Double niPriceTicket;
-
- 	 /** 
-	  * 是否启用
-	  */
-	 private Boolean isEnabled;
-
- 	 /** 
-	  * 是否删除
-	  */
-	 private Boolean isDeleted;
+	 private String siContactsPhone;
 
  	 /** 
 	  * 备注
@@ -83,5 +63,10 @@ public class OpsProductEntity {
 	  * 更新时间
 	  */
 	 private Date tsUpdateTime;
+
+ 	 /** 
+	  * 是否删除
+	  */
+	 private Boolean isDeleted;
 
  }

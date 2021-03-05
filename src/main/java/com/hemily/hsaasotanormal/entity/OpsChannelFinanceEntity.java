@@ -10,44 +10,49 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 渠道财务协议表(ops_channel_finance)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="ops_channel_finance")
+public class OpsChannelFinanceEntity {
 	 /** 
-	  * 产品Id
+	  * 协议Id
 	  */
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
+	 @TableId(value="nl_protocol_id",type= IdType.AUTO)
+	 private Long nlProtocolId;
 
  	 /** 
-	  * 产品编码
-	  */
-	 private Integer niProductCode;
-
- 	 /** 
-	  * 所属商户Id
+	  * 商户Id
 	  */
 	 private Long nlMerchantId;
 
  	 /** 
-	  * 产品名称
+	  * 渠道Id
 	  */
-	 private String siProductName;
+	 private Long nlChannelId;
 
  	 /** 
-	  * 线下编码
+	  * 账户余额
 	  */
-	 private String siOfflineCode;
+	 private Integer niAmountBalance;
 
  	 /** 
-	  * 票面价
+	  * 信用额度
 	  */
-	 private Double niPriceTicket;
+	 private Integer niAmountCreditline;
+
+ 	 /** 
+	  * 占用金额
+	  */
+	 private Integer niAmountOccupation;
+
+ 	 /** 
+	  * 账户状态：0-禁用，1-正常
+	  */
+	 private Integer niStatus;
 
  	 /** 
 	  * 是否启用

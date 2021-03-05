@@ -10,44 +10,59 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 渠道合作协议表(ops_channel_protocol)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="ops_channel_protocol")
+public class OpsChannelProtocolEntity {
 	 /** 
-	  * 产品Id
+	  * 协议Id
 	  */
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
+	 @TableId(value="nl_protocol_id",type= IdType.AUTO)
+	 private Long nlProtocolId;
 
  	 /** 
-	  * 产品编码
-	  */
-	 private Integer niProductCode;
-
- 	 /** 
-	  * 所属商户Id
+	  * 商户Id
 	  */
 	 private Long nlMerchantId;
 
  	 /** 
-	  * 产品名称
+	  * 渠道Id
 	  */
-	 private String siProductName;
+	 private Long nlChannelId;
 
  	 /** 
-	  * 线下编码
+	  * 景区联系人
 	  */
-	 private String siOfflineCode;
+	 private String siMerchantContactName;
 
  	 /** 
-	  * 票面价
+	  * 景区联系电话
 	  */
-	 private Double niPriceTicket;
+	 private String siMerchantContactPhone;
+
+ 	 /** 
+	  * 渠道联系人
+	  */
+	 private String siChannelContactName;
+
+ 	 /** 
+	  * 渠道联系电话
+	  */
+	 private String siChannelContactPhone;
+
+ 	 /** 
+	  * 生效时间
+	  */
+	 private Date tsEffectiveSt;
+
+ 	 /** 
+	  * 失效时间
+	  */
+	 private Date tsEffectiveEt;
 
  	 /** 
 	  * 是否启用

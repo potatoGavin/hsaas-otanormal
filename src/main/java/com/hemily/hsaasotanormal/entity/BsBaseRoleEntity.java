@@ -10,59 +10,34 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 权限模板表(bs_base_role)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="bs_base_role")
+public class BsBaseRoleEntity {
 	 /** 
-	  * 产品Id
+	  * 模板Id
 	  */
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
+	 @TableId(value="nl_role_id",type= IdType.AUTO)
+	 private Long nlRoleId;
 
  	 /** 
-	  * 产品编码
+	  * 所属公司
 	  */
-	 private Integer niProductCode;
+	 private Long nlCompanyId;
 
  	 /** 
-	  * 所属商户Id
+	  * 名称
 	  */
-	 private Long nlMerchantId;
-
- 	 /** 
-	  * 产品名称
-	  */
-	 private String siProductName;
-
- 	 /** 
-	  * 线下编码
-	  */
-	 private String siOfflineCode;
-
- 	 /** 
-	  * 票面价
-	  */
-	 private Double niPriceTicket;
-
- 	 /** 
-	  * 是否启用
-	  */
-	 private Boolean isEnabled;
-
- 	 /** 
-	  * 是否删除
-	  */
-	 private Boolean isDeleted;
+	 private String siRoleName;
 
  	 /** 
 	  * 备注
 	  */
-	 private String siRemark;
+	 private String siRoleRemark;
 
  	 /** 
 	  * 创建人
@@ -83,5 +58,10 @@ public class OpsProductEntity {
 	  * 更新时间
 	  */
 	 private Date tsUpdateTime;
+
+ 	 /** 
+	  * 是否启用
+	  */
+	 private Boolean isEnabled;
 
  }

@@ -10,59 +10,49 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 用户信息表(bs_base_userinfo)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="bs_base_userinfo")
+public class BsBaseUserinfoEntity {
 	 /** 
-	  * 产品Id
+	  * 用户Id
 	  */
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
+	 @TableId(value="nl_user_id",type= IdType.AUTO)
+	 private Long nlUserId;
 
  	 /** 
-	  * 产品编码
+	  * 所属公司
 	  */
-	 private Integer niProductCode;
+	 private Long nlCompanyId;
 
  	 /** 
-	  * 所属商户Id
+	  * 登录账号
 	  */
-	 private Long nlMerchantId;
+	 private String siUserAccount;
 
  	 /** 
-	  * 产品名称
+	  * 登录密码
 	  */
-	 private String siProductName;
+	 private String siUserPassword;
 
  	 /** 
-	  * 线下编码
+	  * 用户姓名
 	  */
-	 private String siOfflineCode;
+	 private String siUserName;
 
  	 /** 
-	  * 票面价
+	  * 手机号
 	  */
-	 private Double niPriceTicket;
+	 private String siUserMobile;
 
  	 /** 
-	  * 是否启用
+	  * 当前权限模板
 	  */
-	 private Boolean isEnabled;
-
- 	 /** 
-	  * 是否删除
-	  */
-	 private Boolean isDeleted;
-
- 	 /** 
-	  * 备注
-	  */
-	 private String siRemark;
+	 private Long nlRoleId;
 
  	 /** 
 	  * 创建人
@@ -83,5 +73,15 @@ public class OpsProductEntity {
 	  * 更新时间
 	  */
 	 private Date tsUpdateTime;
+
+ 	 /** 
+	  * 是否启用
+	  */
+	 private Boolean isEnabled;
+
+ 	 /** 
+	  * 是否删除
+	  */
+	 private Boolean isDeleted;
 
  }

@@ -1,5 +1,4 @@
 package com.hemily.hsaasotanormal.entity;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -11,48 +10,48 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 价格日历表(ops_product_price_ota)Entity
+ 系统操作按钮表(bs_sys_button)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product_price_ota")
-public class OpsProductPriceOtaEntity {
+@TableName(value="bs_sys_button")
+public class BsSysButtonEntity {
 	 /** 
-	  * 价格Id
+	  * 按钮Id
 	  */
-	 @TableId(value="nl_price_id",type= IdType.AUTO)
-	 private Long nlPriceId;
+	 @TableId(value="nl_button_id",type= IdType.AUTO)
+	 private Long nlButtonId;
 
  	 /** 
-	  * 所属景区Id
+	  * 所属菜单
 	  */
-	 private Long nlMerchantId;
+	 private Long nlMenuId;
 
  	 /** 
-	  * 所属渠道Id
+	  * 按钮名称
 	  */
-	 private Long nlChannelId;
+	 private String siButtonName;
 
  	 /** 
-	  * 产品Id
+	  * 绑定事件
 	  */
-	 private Long nlProductId;
+	 private String siButtonEvent;
 
  	 /** 
-	  * 售卖价
+	  * 图标
 	  */
-	 private Double niPriceSell;
+	 private String siButtonIcon;
 
  	 /** 
-	  * 结算价
+	  * 排序号
 	  */
-	 private Double niPriceSettle;
+	 private Integer niSort;
 
  	 /** 
-	  * 有效日期
+	  * 是否启用
 	  */
-	 private Date tsDate;
+	 private Boolean isEnabled;
 
  }

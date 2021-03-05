@@ -10,14 +10,14 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 产品上架表(ops_product_sell)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="ops_product_sell")
+public class OpsProductSellEntity {
 	 /** 
 	  * 产品Id
 	  */
@@ -50,9 +50,19 @@ public class OpsProductEntity {
 	 private Double niPriceTicket;
 
  	 /** 
-	  * 是否启用
+	  * 售卖价
 	  */
-	 private Boolean isEnabled;
+	 private Double niPriceSell;
+
+ 	 /** 
+	  * 生效时间
+	  */
+	 private Date tsEffectiveSt;
+
+ 	 /** 
+	  * 失效时间
+	  */
+	 private Date tsEffectiveEt;
 
  	 /** 
 	  * 是否删除

@@ -10,59 +10,69 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 基础产品库(ops_product)Entity
+ 数据字典(bs_sys_dict)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product")
-public class OpsProductEntity {
+@TableName(value="bs_sys_dict")
+public class BsSysDictEntity {
 	 /** 
-	  * 产品Id
+	  * 字典Key
 	  */
-	 @TableId(value="nl_product_id",type= IdType.AUTO)
-	 private Long nlProductId;
+	 @TableId(value="nl_dict_key",type= IdType.AUTO)
+	 private Long nlDictKey;
 
  	 /** 
-	  * 产品编码
+	  * 类型Id
 	  */
-	 private Integer niProductCode;
+	 private Long nlDictType;
 
  	 /** 
-	  * 所属商户Id
+	  * 字典编码
 	  */
-	 private Long nlMerchantId;
+	 private String siDictCode;
 
  	 /** 
-	  * 产品名称
+	  * 字典值
 	  */
-	 private String siProductName;
+	 private String siDictValue;
 
  	 /** 
-	  * 线下编码
+	  * 上级字典Key
 	  */
-	 private String siOfflineCode;
+	 private Long nlParentKey;
 
  	 /** 
-	  * 票面价
+	  * 上级字典编码
 	  */
-	 private Double niPriceTicket;
+	 private Long nlParentCode;
 
  	 /** 
-	  * 是否启用
+	  * 字典图标
 	  */
-	 private Boolean isEnabled;
+	 private String siDictIcon;
+
+ 	 /** 
+	  * 系统限定
+	  */
+	 private Integer niLimitSys;
+
+ 	 /** 
+	  * 排序号
+	  */
+	 private Integer niDictSort;
+
+ 	 /** 
+	  * 备注
+	  */
+	 private String slRemark;
 
  	 /** 
 	  * 是否删除
 	  */
 	 private Boolean isDeleted;
-
- 	 /** 
-	  * 备注
-	  */
-	 private String siRemark;
 
  	 /** 
 	  * 创建人

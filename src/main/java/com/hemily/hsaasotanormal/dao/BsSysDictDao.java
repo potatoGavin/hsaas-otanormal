@@ -1,13 +1,13 @@
 package com.hemily.hsaasotanormal.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hemily.hsaasotanormal.entity.OpsProductEntity;
+import com.hemily.hsaasotanormal.entity.BsSysDictEntity;
 import org.springframework.stereotype.Repository;
 
  /**
- 基础产品库(ops_product)Dao
+ 数据字典(bs_sys_dict)Dao
  */
 @Repository
-public interface OpsProductDao extends BaseMapper<OpsProductEntity> {
+public interface BsSysDictDao extends BaseMapper<BsSysDictEntity> {
 
 }

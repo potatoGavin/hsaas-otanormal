@@ -1,5 +1,4 @@
 package com.hemily.hsaasotanormal.entity;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -11,29 +10,34 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
  /**
- 价格日历表(ops_product_price_ota)Entity
+ 退款记录明细表(order_refund_detail)Entity
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@TableName(value="ops_product_price_ota")
-public class OpsProductPriceOtaEntity {
+@TableName(value="order_refund_detail")
+public class OrderRefundDetailEntity {
 	 /** 
-	  * 价格Id
+	  * 记录明细Id
 	  */
-	 @TableId(value="nl_price_id",type= IdType.AUTO)
-	 private Long nlPriceId;
+	 @TableId(value="nl_detail_id",type= IdType.AUTO)
+	 private Long nlDetailId;
 
  	 /** 
-	  * 所属景区Id
+	  * 记录Id
 	  */
-	 private Long nlMerchantId;
+	 private Long nlRefundId;
 
  	 /** 
-	  * 所属渠道Id
+	  * 退款订单号
 	  */
-	 private Long nlChannelId;
+	 private String siOrderno;
+
+ 	 /** 
+	  * 凭证码
+	  */
+	 private String siEcode;
 
  	 /** 
 	  * 产品Id
@@ -41,18 +45,18 @@ public class OpsProductPriceOtaEntity {
 	 private Long nlProductId;
 
  	 /** 
-	  * 售卖价
+	  * 退款单价
 	  */
-	 private Double niPriceSell;
+	 private Double niProductPrice;
 
  	 /** 
-	  * 结算价
+	  * 退款数量
 	  */
-	 private Double niPriceSettle;
+	 private Integer niProductQty;
 
  	 /** 
-	  * 有效日期
+	  * 退款金额
 	  */
-	 private Date tsDate;
+	 private Integer niProductAmt;
 
  }
