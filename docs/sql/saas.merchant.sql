@@ -1,27 +1,27 @@
 
 -- 系统商户相关表
 
-drop table if exists ops_merchant;
-create table ops_merchant (
- nl_merchant_id bigint unsigned not null comment '商户Id',
- nl_company_id bigint unsigned not null comment '所属公司Id',
- si_merchant_code varchar(30) not null comment '商户编码',
- ni_merchant_type tinyint not null comment '商户类型：10-景区，21-ota，22-旅行社',
- si_contact_name varchar(20) not null comment '联系人',
- si_contact_phone varchar(20) not null comment '联系电话',
- si_merchant_key varchar(50) not null comment '秘钥',
- is_enabled tinyint unsigned not null comment '是否启用',
- is_deleted tinyint unsigned default '0' comment '是否删除',
- si_remark varchar(100) default null comment '备注',
- si_create_user varchar(20) not null comment '创建人',
- ts_create_time datetime not null comment '创建时间',
- si_update_user varchar(20) not null comment '更新人',
- si_update_time datetime not null comment '更新时间',
-primary key (nl_merchant_id),
-unique key(si_merchant_code),
-key idx_query(nl_company_id,si_merchant_code,si_contact_name)
-)Engine=INNODB charset=utf8 comment '商户主表';
-
+DROP TABLE IF EXISTS `ops_merchant`;
+CREATE TABLE `ops_merchant` (
+                                `nl_merchant_id` bigint(20) unsigned NOT NULL COMMENT '商户Id',
+                                `nl_company_id` bigint(20) unsigned NOT NULL COMMENT '所属公司Id',
+                                `si_merchant_name` varchar(30) NOT NULL COMMENT '商户名称',
+                                `si_merchant_code` varchar(30) NOT NULL COMMENT '商户编码',
+                                `ni_merchant_type` tinyint(4) NOT NULL COMMENT '商户类型：10-景区，21-ota，22-旅行社',
+                                `si_contact_name` varchar(20) NOT NULL COMMENT '联系人',
+                                `si_contact_phone` varchar(20) NOT NULL COMMENT '联系电话',
+                                `si_merchant_key` varchar(50) NOT NULL COMMENT '秘钥',
+                                `is_enabled` tinyint(3) unsigned NOT NULL COMMENT '是否启用',
+                                `is_deleted` tinyint(3) unsigned DEFAULT '0' COMMENT '是否删除',
+                                `si_remark` varchar(100) DEFAULT NULL COMMENT '备注',
+                                `si_create_user` varchar(20) NOT NULL COMMENT '创建人',
+                                `ts_create_time` datetime NOT NULL COMMENT '创建时间',
+                                `si_update_user` varchar(20) NOT NULL COMMENT '更新人',
+                                `ts_update_time` datetime NOT NULL COMMENT '更新时间',
+                                PRIMARY KEY (`nl_merchant_id`),
+                                UNIQUE KEY `si_merchant_code` (`si_merchant_code`),
+                                KEY `idx_query` (`nl_company_id`,`si_merchant_code`,`si_contact_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商户主表';
 drop table if exists ops_merchant_ota;
 create table ops_merchant_ota (
  nl_merchant_id bigint unsigned not null comment '商户Id',
